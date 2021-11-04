@@ -14,7 +14,7 @@
 	<name>reto4</name>
 	<description>Reto para el ciclo 3 de desarrollo de sotfwares</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -64,6 +64,14 @@
             <version>0.47</version>
         </dependency>
         <!-- end dependencias web -->
+        
+        <!-- dependencia oauth2 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-client</artifactId>
+            <version>2.5.4</version>
+        </dependency>
+        <!-- end dependencia oauth2 --> 
                 
 	</dependencies>
 

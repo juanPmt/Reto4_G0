@@ -1,10 +1,12 @@
 package co.usa.edu.grupo0.ciclo3;
 
+import co.usa.edu.grupo0.ciclo3.modelo.Admin;
 import co.usa.edu.grupo0.ciclo3.modelo.Computer;
 import co.usa.edu.grupo0.ciclo3.modelo.Category;
 import co.usa.edu.grupo0.ciclo3.modelo.Client;
 import co.usa.edu.grupo0.ciclo3.modelo.Message;
 import co.usa.edu.grupo0.ciclo3.modelo.Reservation;
+import co.usa.edu.grupo0.ciclo3.repositorio.AdminRepository;
 import co.usa.edu.grupo0.ciclo3.repositorio.ComputerRepository;
 import co.usa.edu.grupo0.ciclo3.repositorio.CategoryRepository;
 import co.usa.edu.grupo0.ciclo3.repositorio.ClientRepository;
@@ -34,6 +36,9 @@ public class Ciclo3Application {
     @Autowired
     private ReservationRepository crudReservation ;
     
+    @Autowired
+    private AdminRepository crudAdmin ;
+    
 
     public static void main(String[] args) {
     SpringApplication.run(Ciclo3Application.class, args);
@@ -58,6 +63,9 @@ public class Ciclo3Application {
             
             List<Reservation> rreser= crudReservation.getAll();
             System.out.println("Reservations: "+rreser.size());
+            
+            List<Admin> radmin= crudAdmin.getAll();
+            System.out.println("Admins: "+radmin.size());
                   
         };
     }

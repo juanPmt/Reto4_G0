@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Calificar reserva</title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <base href="/"/>
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/crearReviewF.js"></script>
+    </head>
+    <body style="background-color: #75705E">
+
+        <!-- Aquí va el contenido de tu web -->
+        <div class="container  mt-5 mb-5">
+
+            <div class="row m-0">
+                <div class="col-md-12 p-0  pt-4 pb-4">
+
+                    <form class="bg-light p-4 m-auto" style="width: 50%">
+                        <h2>Calficación de la reserva</h2><br>
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="inputValorCalificacion">Calificacion:</label>
+                                    <input type="number" value="" min="1" max="5" class="form-control"
+                                           id="inputCalificacion" placeholder="Ingrese Calificacion (Max=5, Min=1)">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="inputMensaje">Mensaje</label>
+                                    <input type="txt" class="form-control" id="MensajeR" placeholder="Ingrese un mensaje...">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="inputReserva">Reserva:</label>
+                                    <input type="number" class="form-control" id="inputIdReserva">
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-12">
+                                <div class="mb-6">
+                                    <button onclick="crearReviewF()" type="button" class="btn btn-primary"
+                                            style="margin-right:5px; width:100px">Crear</button>
+                                    <a href="inicio.html" type="button" class="btn btn-primary"
+                                       style="width:100px">Inicio</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
