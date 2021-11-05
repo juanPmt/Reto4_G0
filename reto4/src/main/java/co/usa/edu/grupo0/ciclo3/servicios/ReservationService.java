@@ -58,6 +58,9 @@ public class ReservationService {
                 if(reservation.getStatus()!=null){
                     e.get().setStatus(reservation.getStatus());
                 }
+                if(reservation.getScore()!=null){
+                    e.get().setScore(reservation.getScore());
+                }
                 reservationCrud.save(e.get());
                 return e.get();
             }else{

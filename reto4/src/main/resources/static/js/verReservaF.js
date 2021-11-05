@@ -3,9 +3,10 @@ $(document).ready(function () {
     verReservaF();
 });
 
-let abrirFormRev = function (id,pc) {
+let abrirFormRev = function (id, pc,cl) {
     $("#idRev").val(id);
     $("#pcR").val(pc);
+    $("#clR").val(cl);
     $("#reviewM").modal('show');
 };
 
@@ -15,7 +16,7 @@ let abrirFormR = function (id) {
 };
 
 let cerrarFormRev = function () {
-    $('#modalRev').modal('hide');
+    $('#reviewM').modal('hide');
     verReservaF();
 };
 
@@ -104,6 +105,9 @@ function crearMensajeRF() {
         computer: {
             id: +$("#pcR").val()
         },
+        client: {
+            idClient: +$("#clR").val()
+        },
         messageText: $("#MensajeR").val()
     };
 
@@ -147,12 +151,14 @@ function verReservaF() {
 function mostrarRespuestaR(items) {
     let tablaR = `<table class="table striped" border="1">
                       <tr>
+                        <th>  </th>
                         <th>Id</th>
                         <th>Computador</th>
                         <th>Id Cliente</th>
                         <th>Nombre Cliente</th>
                         <th>Correo Cliente</th>
                         <th>Calificación</th>
+                        <th>Fecha de creación</th>
                         <th>Status</th>
                         <th>Acciones</th>
                       </tr>`;
@@ -160,16 +166,17 @@ function mostrarRespuestaR(items) {
     for (let i = 0; i < items.length; i++) {
 
         tablaR += `<tr>
-                       <td>
-                       <button type="button" class="btn-xs btn-primary onclick="abrirFormRev(${items[i].idReservation},'${items[i].computer.id}')">
-                        Calificar
-                       </button></td>
+                        <td>
+                         <button type="button" class="btn-xs btn-warning" onclick="abrirFormRev(${items[i].idReservation},'${items[i].computer.id}','${items[i].client.idClient}')">
+                         Calificar
+                        </button></td>
                        <td>${items[i].idReservation}</td> 
                        <td>${items[i].computer.brand} ${items[i].computer.name}</td>
                        <td>${items[i].client.idClient}</td>
                        <td>${items[i].client.name}</td>
                        <td>${items[i].client.email}</td>
                        <td>${items[i].score}</td>
+                       <td>${items[i].createdDate}</td>
                        <td>${items[i].status}</td>
                        <td style="margin:0">
                         <button type="button" class="btn-xs btn-primary" onclick="abrirFormR(${items[i].idReservation})">
@@ -177,8 +184,7 @@ function mostrarRespuestaR(items) {
                         </button>
                         <button type="button" class="btn-xs btn-danger" onclick="eliminarRes(${items[i].idReservation})">
                          Borrar
-                        </button>
-                        
+                        </button>   
                    </td>                
                     </tr>`;
     }
@@ -187,5 +193,4 @@ function mostrarRespuestaR(items) {
     $("#tablaR").html(tablaR);
 }
 
-//onclick="abrirFormRev(${items[i].idReservation},'${items[i].computer.id}')"
 

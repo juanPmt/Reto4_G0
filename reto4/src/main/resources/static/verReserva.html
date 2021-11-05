@@ -20,7 +20,7 @@
             <div class="row m-0">
                 <div class="col-md-12 p-0  pt-4 pb-4">
 
-                    <form class="bg-light p-4 m-auto" style="width: 75%">
+                    <form class="bg-light p-4 m-auto" style="width: 90%">
                         <h2>Reservas en el sistema</h2><br>
 
                         <div class="row">
@@ -100,15 +100,17 @@
                             </div>
                             <div class="col-sm-12 col-lg-6">
                                 <label for="calificación" class="form-label">Calificación</label>
-                                <input type="number" class="form-control" id="inputSc">
-                            </div>
-                            <div class="col-sm-12 col-lg-6">
-                                <label for="Computador" class="form-label">Computador</label>
-                                <input type="number" class="form-control" id="pcR" disabled>
-                            </div>
+                                <input type="number" value=""  min="1" max="5" class="form-control" id="inputSc" placeholder="Excelente=5 Malo=1">
+                            </div>                          
                             <div class="col-sm-12 col-lg-6">
                                 <label for="Mensaje" class="form-label">Mensaje</label>
-                                <input type="text" class="form-control" id="MensajeR" disabled>
+                                <input type="text" class="form-control" id="MensajeR">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <input type="number" class="form-control" id="pcR" hidden>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <input type="number" class="form-control" id="clR" hidden>
                             </div>
                         </div>
                     </div>

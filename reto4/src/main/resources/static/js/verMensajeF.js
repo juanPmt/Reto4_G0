@@ -82,6 +82,7 @@ function mostrarRespuestaM(items) {
                       <tr>
                         <th>Mensaje</th>
                         <th>Computador</th>
+                        <th>Cliente</th>
                         <th>Acciones</th>
                       </tr>`;
 
@@ -89,7 +90,8 @@ function mostrarRespuestaM(items) {
 
         tablaM += `<tr>
                        <td>${items[i].messageText}</td> 
-                       <td>${items[i].computer.name}+" "+${items[i].computer.name}</td>
+                       <td>${items[i].computer.brand} ${items[i].computer.name}</td>
+                       <td>${items[i].client.name}</td>
                        <td style="margin:0">
                         <button type="button" class="btn-xs btn-primary" onclick="abrirFormM(${items[i].idMessage})">
                          Editar

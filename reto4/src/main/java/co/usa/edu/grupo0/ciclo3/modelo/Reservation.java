@@ -28,7 +28,8 @@ public class Reservation implements Serializable{
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    private String status="created";
+    private String createdDate;
+    private String status="Creada";
     
     
     
@@ -40,11 +41,14 @@ public class Reservation implements Serializable{
     
     @ManyToOne
     @JoinColumn(name="idClient")//llave foranea en client
-    @JsonIgnoreProperties({"reservations","messages"}) //evita que se genere una referencia circular 
+    @JsonIgnoreProperties({"reservations","messages"}) //evita que se genere una referencia circular
+    
+            
     private Client client;
     
     private Integer score;//depende del grupo
-
+   
+   
     public Integer getIdReservation() {
         return idReservation;
     }
@@ -67,6 +71,14 @@ public class Reservation implements Serializable{
 
     public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
+    }
+    
+    public String getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
     }
 
     public String getStatus() {

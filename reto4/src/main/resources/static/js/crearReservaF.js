@@ -1,20 +1,14 @@
-/*let guardarT =function (){
-    let todayD = new Date();
-    let todayH = new Date();
-    let date = todayD.getFullYear()+'-'+(todayD.getMonth()+1)+'-'+todayD.getDate();
-    var time = todayH.getHours() + ":" + todayH.getMinutes() + ":" + todayH.getSeconds();
-}*/
-
 function crearReservaF() {
     let reserva = {
         computer: {
             id: +$("#selectCom").val()
         },
-        client:{
+        client: {
             idClient: +$("#inputIdCliente").val()
         },
         startDate: $("#inputFechaInicio").val(),
-        devolutionDate: $("#inputFechaEntrega").val()
+        devolutionDate: $("#inputFechaEntrega").val(),
+        createdDate: $("#inputCreacion").val()
     };
 
     console.log("Se va a registrar la reserva para el cliente", reserva.client);
