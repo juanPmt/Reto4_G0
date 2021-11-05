@@ -43,7 +43,7 @@ public class Reservation implements Serializable{
     @JsonIgnoreProperties({"reservations","messages"}) //evita que se genere una referencia circular 
     private Client client;
     
-    private String score;//depende del grupo
+    private Integer score;//depende del grupo
 
     public Integer getIdReservation() {
         return idReservation;
@@ -93,11 +93,11 @@ public class Reservation implements Serializable{
         this.client = client;
     }
 
-    public String getScore() {
+    public Integer getScore() {
         return score;
     }
 
-    public void setScore(String score) {
+    public void setScore(Integer score) {
         this.score = score;
     }
 }

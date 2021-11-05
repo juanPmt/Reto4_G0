@@ -1,3 +1,10 @@
+/*let guardarT =function (){
+    let todayD = new Date();
+    let todayH = new Date();
+    let date = todayD.getFullYear()+'-'+(todayD.getMonth()+1)+'-'+todayD.getDate();
+    var time = todayH.getHours() + ":" + todayH.getMinutes() + ":" + todayH.getSeconds();
+}*/
+
 function crearReservaF() {
     let reserva = {
         computer: {
