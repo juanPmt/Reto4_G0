@@ -3,6 +3,61 @@ $(document).ready(function () {
     verMensajeF();
 });
 
+let abrirFormM=function (id){
+    $("#idM").val(id);
+    $('#modalM').modal('show');
+};
+let cerrarFormM=function (){
+    $('#modalM').modal('hide');
+    verMensajeF();
+};
+
+function editMensajeF(){
+    console.log("ejecutando funcion para actualizar");
+
+    let mensaje = {
+        idMessage: +$("#idM").val(),
+        messageText: $("#Mensaje2").val()
+    };
+
+    console.log(mensaje);
+
+    $.ajax({
+        url: "api/Message/update",
+        type: 'PUT',
+        dataType: 'json',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        data: JSON.stringify(mensaje),
+        statusCode:{
+            201:function(){
+                alert('Se ha actualizado de manera correcta');
+                cerrarFormM();
+            }
+        },
+    });
+}
+
+function eliminarMens(identificador){
+
+    console.log("ejecutando funcion para eliminar");
+    $.ajax({
+        url: "/api/Message/"+identificador,
+        type: 'DELETE',
+        dataType: 'json',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        statusCode:{
+            204:function(){
+                alert('Se ha eliminado el mensaje');
+                verMensajeF();
+            }
+        },
+    });
+}
+
 function verMensajeF() {
     //Nos trae desde el servidos la base de datos de la tabla mensajes
     $.ajax({
@@ -27,7 +82,6 @@ function mostrarRespuestaM(items) {
                       <tr>
                         <th>Mensaje</th>
                         <th>Computador</th>
-                        <th>Cliente</th>
                         <th>Acciones</th>
                       </tr>`;
 
@@ -35,12 +89,13 @@ function mostrarRespuestaM(items) {
 
         tablaM += `<tr>
                        <td>${items[i].messageText}</td> 
-                       <td>${items[i].computer.name}</td>
-                       <td>${items[i].computer.client}</td>
+                       <td>${items[i].computer.name}+" "+${items[i].computer.name}</td>
                        <td style="margin:0">
-                        <button type="button" class="btn-xs btn-primary">Editar
+                        <button type="button" class="btn-xs btn-primary" onclick="abrirFormM(${items[i].idMessage})">
+                         Editar
                         </button>
-                        <button type="button" class="btn-xs btn-danger">Borrar
+                        <button type="button" class="btn-xs btn-danger" onclick="eliminarMens(${items[i].idMessage})">
+                         Borrar
                         </button>
                         </td>
                     </tr>`;
