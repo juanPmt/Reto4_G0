@@ -20,7 +20,7 @@
             <div class="row m-0">
                 <div class="col-md-12 p-0  pt-4 pb-4">
 
-                    <form class="bg-light p-4 m-auto" style="width: 65%">
+                    <form class="bg-light p-4 m-auto" style="width: 75%">
                         <h2>Reservas en el sistema</h2><br>
 
                         <div class="row">
@@ -44,73 +44,81 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Modal para el formulario actualizar-->
         <div class="modal fade" id="modalR" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="tituloModalR">Editar Reserva</h5>
-                        </div>
-                        <div class="modal-body">      
-                            <div class="row">
-                                <div class="col-sm-12 col-lg-6">
-                                    <label for="id" class="form-label">id</label>
-                                    <input type="number" class="form-control" id="idR" disabled>
-                                </div>
-                                <div class="col-sm-12 col-lg-6">
-                                    <label for="FechaI" class="form-label">Fecha de inicio</label>
-                                    <input type="date" class="form-control" id="inputFechaInicio2" placeholder="Nueva fecha de inicio">
-                                </div>
-                                <div class="col-sm-12 col-lg-6">
-                                    <label for="FechaE" class="form-label">Fecha de entrega</label>
-                                    <input type="date" class="form-control" id="inputFechaEntrega2" placeholder="Nueva fecha de entrega">
-                                </div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tituloModalR">Editar Reserva</h5>
+                    </div>
+                    <div class="modal-body">      
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="id" class="form-label">id</label>
+                                <input type="number" class="form-control" id="idR" disabled>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="FechaI" class="form-label">Fecha de inicio</label>
+                                <input type="date" class="form-control" id="inputFechaInicio2" placeholder="Nueva fecha de inicio">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="FechaE" class="form-label">Fecha de entrega</label>
+                                <input type="date" class="form-control" id="inputFechaEntrega2" placeholder="Nueva fecha de entrega">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="status">Status:</label>
+                                <select id="inputStatus" name="status">
+                                    <option value="Programada">Programada</option>
+                                    <option value="Cancelada" selected>Cancelada</option>
+                                    <option value="Realizado">Realizado</option>
+                                </select> 
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="editReservaF()">Guardar</button>
-                            <button type="button" class="btn btn-secondary" onclick="cerrarFormR()">Cancelar</button>
-                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="editReservaF()">Guardar</button>
+                        <button type="button" class="btn btn-secondary" onclick="cerrarFormR()">Cancelar</button>
                     </div>
                 </div>
             </div>
-            <!-- fin del modal de formulario -->
-            
-            <!-- Modal para el formulario calificar-->
-        <div class="modal fade" id="modalRev" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="tituloModalRev">Calificar reserva</h5>
-                        </div>
-                        <div class="modal-body">      
-                            <div class="row">
-                                <div class="col-sm-12 col-lg-6">
-                                    <label for="id" class="form-label">id Reserva</label>
-                                    <input type="number" class="form-control" id="idRev" disabled>
-                                </div>
-                                <div class="col-sm-12 col-lg-6">
-                                    <label for="calificación" class="form-label">Calificación</label>
-                                    <input type="number" class="form-control" id="inputSc">
-                                </div>
-                                <div class="col-sm-12 col-lg-6">
-                                    <label for="Computador" class="form-label">Computador</label>
-                                    <input type="number" class="form-control" id="pcR" disabled>
-                                </div>
-                                <div class="col-sm-12 col-lg-6">
-                                    <label for="Mensaje" class="form-label">Mensaje</label>
-                                    <input type="text" class="form-control" id="MensajeR" disabled>
-                                </div>
+        </div>
+        <!-- fin del modal de formulario -->
+
+        <!-- Modal para el formulario calificar-->
+        <div class="modal fade" id="reviewM" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tituloModalRev">Calificar reserva</h5>
+                    </div>
+                    <div class="modal-body">      
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="id" class="form-label">id Reserva</label>
+                                <input type="number" class="form-control" id="idRev" disabled>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="calificación" class="form-label">Calificación</label>
+                                <input type="number" class="form-control" id="inputSc">
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="Computador" class="form-label">Computador</label>
+                                <input type="number" class="form-control" id="pcR" disabled>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <label for="Mensaje" class="form-label">Mensaje</label>
+                                <input type="text" class="form-control" id="MensajeR" disabled>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="crearReviewF()">Calificar</button>
-                            <button type="button" class="btn btn-secondary" onclick="cerrarFormRev()">Cancelar</button>
-                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="crearReviewF()">Calificar</button>
+                        <button type="button" class="btn btn-secondary" onclick="cerrarFormRev()">Cancelar</button>
                     </div>
                 </div>
             </div>
-            <!-- fin del modal de calificar -->
+        </div>
+        <!-- fin del modal de calificar -->
     </body>
 </html>

@@ -14,7 +14,7 @@
 	<name>reto4</name>
 	<description>Reto para el ciclo 3 de desarrollo de sotfwares</description>
 	<properties>
-		<java.version>16</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
