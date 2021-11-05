@@ -43,5 +43,37 @@
             </div>
         </div>
     </div>
+    
+    <!-- Modal para el formulario actualizar-->
+        <div class="modal fade" id="modalCat" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalCat">Editar Categoria</h5>
+                        </div>
+                        <div class="modal-body">      
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="id" class="form-label">id</label>
+                                    <input type="number" class="form-control" id="idCat" disabled>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="inputNombreCat2" placeholder="Nuevo nombre">
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="Contraseña" class="form-label">Descripción</label>
+                                    <input type="text" class="form-control" id="inputDescripcionCat2" placeholder="Nueva descripción">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="editCategoriaF()">Guardar</button>
+                            <button type="button" class="btn btn-secondary" onclick="cerrarFormCat()">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin del modal de formulario -->
 </body>
 </html>

@@ -46,9 +46,9 @@ function verReservaF(){
                        <td style="margin:0">
                         <button type="button" class="btn-xs btn-primary">Editar
                         </button>
-                        <button type="button" class="btn-xs btn-warning">Borrar
+                        <button type="button" class="btn-xs btn-warning">Calificar
                         </button>
-                        <button type="button" class="btn-xs btn-danger">Calificar
+                        <button type="button" class="btn-xs btn-danger">Borrar
                         </button>
                    </td>                
                     </tr>`;

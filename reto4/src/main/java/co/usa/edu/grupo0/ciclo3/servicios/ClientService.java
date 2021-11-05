@@ -37,7 +37,7 @@ public class ClientService {
             return clientCrud.save(client);
         }else{
             Optional<Client> e= clientCrud.getClient(client.getIdClient());
-            if(e.isEmpty()){
+            if(!e.isPresent()){
                 return clientCrud.save(client);
             }else{
                 return client;
@@ -48,7 +48,7 @@ public class ClientService {
     public Client update(Client client){
         if(client.getIdClient()!=null){
             Optional<Client> e= clientCrud.getClient(client.getIdClient());
-            if(!e.isEmpty()){
+            if(e.isPresent()){
                 if(client.getName()!=null){
                     e.get().setName(client.getName());
                 }

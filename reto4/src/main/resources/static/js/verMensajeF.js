@@ -36,6 +36,7 @@ function mostrarRespuestaM(items) {
         tablaM += `<tr>
                        <td>${items[i].messageText}</td> 
                        <td>${items[i].computer.name}</td>
+                       <td>${items[i].computer.client}</td>
                        <td style="margin:0">
                         <button type="button" class="btn-xs btn-primary">Editar
                         </button>

@@ -36,7 +36,7 @@ public class CategoryService {
             return categoryCrud.save(category);
         } else {
             Optional<Category> g = categoryCrud.getCategory(category.getId());
-            if (g.isEmpty()) {
+            if (!g.isPresent()) {
                 return categoryCrud.save(category);
 
             } else {
@@ -48,7 +48,7 @@ public class CategoryService {
     public Category update(Category category){
         if(category.getId()!=null){
             Optional<Category>g=categoryCrud.getCategory(category.getId());
-            if(!g.isEmpty()){
+            if(g.isPresent()){
                 if(category.getDescription()!=null){
                     g.get().setDescription(category.getDescription());
                 }

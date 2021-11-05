@@ -36,7 +36,7 @@ public class ComputerService {
             return computerCrud.save(computer);
         } else {
             Optional<Computer> e = computerCrud.getComputer(computer.getId());
-            if (e.isEmpty()) {
+            if (!e.isPresent()) {
                 return computerCrud.save(computer);
 
             } else {
@@ -47,7 +47,7 @@ public class ComputerService {
         public Computer update(Computer computer){
         if(computer.getId()!=null){
             Optional<Computer> e=computerCrud.getComputer(computer.getId());
-            if(!e.isEmpty()){
+            if(e.isPresent()){
                 if(computer.getName()!=null){
                     e.get().setName(computer.getName());
                 }

@@ -36,7 +36,7 @@ public class MessageService {
             return messageCrud.save(message);
         } else {
             Optional<Message> m = messageCrud.getMessage(message.getIdMessage());
-            if (m.isEmpty()) {
+            if (!m.isPresent()) {
                 return messageCrud.save(message);
 
             } else {
@@ -47,7 +47,7 @@ public class MessageService {
     public Message update(Message message){
         if(message.getIdMessage()!=null){
             Optional<Message> e= messageCrud.getMessage(message.getIdMessage());
-            if(!e.isEmpty()){
+            if(e.isPresent()){
                 if(message.getMessageText()!=null){
                     e.get().setMessageText(message.getMessageText());
                 }

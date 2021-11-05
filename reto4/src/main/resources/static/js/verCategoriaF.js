@@ -3,6 +3,62 @@ $(document).ready(function () {
     verCategoriaF();
 });
 
+let abrirFormCat=function (id){
+    $("#idCat").val(id);
+    $('#modalCat').modal('show');
+};
+let cerrarFormCat=function (){
+    $('#modalCat').modal('hide');
+    verCategoriaF();
+};
+
+function editCategoriaF(){
+    console.log("ejecutando funcion para actualizar");
+
+    let categoria = {
+        id: +$("#idCat").val(),
+        name: $("#inputNombreCat2").val(),
+        description: $("#inputDescripcionCat2").val()
+    };
+
+    console.log(categoria);
+
+    $.ajax({
+        url: "api/Category/update",
+        type: 'PUT',
+        dataType: 'json',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        data: JSON.stringify(categoria),
+        statusCode:{
+            201:function(){
+                alert('Se ha actualizado de manera correcta');
+                cerrarFormCat();
+            }
+        },
+    });
+}
+
+function eliminarCat(identificador){
+
+    console.log("ejecutando funcion para eliminar");
+    $.ajax({
+        url: "/api/Category/"+identificador,
+        type: 'DELETE',
+        dataType: 'json',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        statusCode:{
+            204:function(){
+                alert('Se ha eliminado la categoria');
+                verCategoriaF();
+            }
+        },
+    });
+}
+
 let verCategoriaF = function () {
     //Nos trae desde el servidos la base de datos de la tabla categoria
     $.ajax({
@@ -36,9 +92,11 @@ function mostrarRespuestaCat(items) {
                        <td>${items[i].name}</td>
                        <td>${items[i].description}</td>
                        <td style="margin:0">
-                        <button type="button" class="btn-xs btn-primary">Editar
+                        <button type="button" class="btn-xs btn-primary" onclick="abrirFormCat(${items[i].id})">
+                         Editar
                         </button>
-                        <button type="button" class="btn-xs btn-danger">Borrar
+                        <button type="button" class="btn-xs btn-danger" onclick="eliminarCat(${items[i].id})">
+                         Borrar
                         </button>
                         </td>
                     </tr>`;

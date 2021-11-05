@@ -43,5 +43,40 @@
             </div>
         </div>
     </div>
+    
+    <!-- Modal para el formulario actualizar-->
+        <div class="modal fade" id="modalCl" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tituloModalCl">Editar Cliente</h5>
+                        </div>
+                        <div class="modal-body">      
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-6">
+                                    <input type="number" class="form-control" id="idCl" disabled>
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="inputNombreCliente2" placeholder="Nuevo nombre">
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="Edad" class="form-label">Edad</label>
+                                    <input type="text" class="form-control" id="inputEdad2" placeholder="Nueva edad">
+                                </div>
+                                <div class="col-sm-12 col-lg-6">
+                                    <label for="Contraseña" class="form-label">Contraseña</label>
+                                    <input type="text" class="form-control" id="inputContraseña2" placeholder="Nueva contraseña">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" onclick="editClienteF()">Guardar</button>
+                            <button type="button" class="btn btn-secondary" onclick="cerrarFormCl()">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin del modal de formulario -->
 </body>
 </html>

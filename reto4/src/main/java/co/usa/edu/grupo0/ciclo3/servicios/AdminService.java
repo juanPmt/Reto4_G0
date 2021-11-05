@@ -25,18 +25,21 @@ public class AdminService {
     public List<Admin> getAll(){
         return crudAdmin.getAll();
     }
-     public Admin getAdmin(int idAdmin){
+    /* public Admin getAdmin(int idAdmin){
         Optional<Admin> auxadmin= crudAdmin.getAdmin(idAdmin);
         return auxadmin.orElse(new Admin());
-    }
+    }*/
     public Admin save(Admin admin){
         return crudAdmin.save(admin);
+    }
+    public Optional<Admin> getAdmin(int adminId) {
+        return crudAdmin.getAdmin(adminId);
     }
     
     public Admin update(Admin admin){
         if(admin.getIdAdmin()!=null){
             Optional<Admin> e= crudAdmin.getAdmin(admin.getIdAdmin());
-            if(!e.isEmpty()){
+            if(e.isPresent()){
                 if(admin.getName()!=null){
                     e.get().setName(admin.getName());
                 }

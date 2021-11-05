@@ -36,7 +36,7 @@ public class ReservationService {
             return reservationCrud.save(reservation);
         } else {
             Optional<Reservation> r = reservationCrud.getReservation(reservation.getIdReservation());
-            if (r.isEmpty()) {
+            if (!r.isPresent()) {
                 return reservationCrud.save(reservation);
 
             } else {
@@ -47,7 +47,7 @@ public class ReservationService {
     public Reservation update(Reservation reservation){
         if(reservation.getIdReservation()!=null){
             Optional<Reservation> e= reservationCrud.getReservation(reservation.getIdReservation());
-            if(!e.isEmpty()){
+            if(e.isPresent()){
 
                 if(reservation.getStartDate()!=null){
                     e.get().setStartDate(reservation.getStartDate());
